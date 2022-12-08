@@ -7,30 +7,37 @@ const onGenerateSubmit = (e) => {
   e.preventDefault();
 
   const url = document.querySelector("#url").value;
-  
-  
-  clearDrake()
+
+  clearDrake();
   generateQRCode(url);
-  
+  setTimeout(() => {
+    const saveUrl = qr.querySelector("img").src;
+    saveBtn(saveUrl);
+  }, 50);
 };
 
 const generateQRCode = (url) => {
   const qrcode = new QRCode(qr, {
     text: url,
-    width: 128,
-	height: 128,
+    width: 300,
+    height: 300,
   });
 };
 
 const saveBtn = (saveUrl) => {
-    const link = document.createElement("a");
-    link.id = save-link;
-    link.classList = 'link';
-    link.download = qr;
-    link.innerHTML = "save image";
-    qr.appendChild(link)
-}
+  const link = document.createElement("a");
 
-const clearDrake = () => qr.innerHTML = ''
+  link.classList = "link";
+  link.href = saveUrl;
+  link.download = "qrcode";
+  link.innerHTML = "Save Image";
+  document.querySelector("#link-wrapper").appendChild(link);
+};
+
+const clearDrake = () => {
+  qr.innerHTML = "";
+  const save = document.querySelector(".link");
+  if (save) save.remove();
+};
 
 form.addEventListener("submit", onGenerateSubmit);
