@@ -26,8 +26,9 @@
     </header>
 
     <section id="post">
+      
       <div id="title">
-        <h1>QR Code Generator</h1>
+        <h1>Convert it!</h1>
         <p>
           QR Codes allow smartphone users to access your website simply and
           quickly
@@ -35,10 +36,31 @@
         <p>
           Enter your URL below to generate a QR Code and download the image.
         </p>
+        <form class="form" action="">
+          
+          <input id="url" type="url" placeholder="Enter a URL...">
+          <!-- <br>
+          <select id="size">
+            <option value="100">100x100</option>
+            <option value="200">200x200</option>
+            <option value="300">300x300</option>
+            <option value="400">400x400</option>
+            <option value="500">500x500</option>
+            <option value="600">600x600</option>
+            <option value="700">700x700</option>
+          </select>
+          <br> -->
+          <button type="submit">Generate QR Code</button>
+        </form>
       </div>
-      <div>
-        <img src="./tymaczasowy.jpeg" alt="">
+      <div >
+        <div id="qr-wrapper"><img src="./tymaczasowy.jpeg" alt=""></div>
       </div>
+<br>
+
+    </section>
+    <section id="qr-section">
+      <div id="qr-wrapper"></div>
     </section>
   </body>
 </html>
