@@ -8,7 +8,7 @@ const onGenerateSubmit = (e) => {
 
   const url = document.querySelector("#url").value;
 
-  clearDrake();
+  clearPooh();
   generateQRCode(url);
   setTimeout(() => {
     const saveUrl = qr.querySelector("img").src;
@@ -34,7 +34,7 @@ const saveBtn = (saveUrl) => {
   document.querySelector("#link-wrapper").appendChild(link);
 };
 
-const clearDrake = () => {
+const clearPooh = () => {
   qr.innerHTML = "";
   const save = document.querySelector(".link");
   if (save) save.remove();
